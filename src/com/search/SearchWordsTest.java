@@ -5,7 +5,6 @@ import org.junit.Test;
 
 public class SearchWordsTest {
 
-
 	@Test
 	public void shouldSearchGivenWord(){
 		String input = "This is a standard text";

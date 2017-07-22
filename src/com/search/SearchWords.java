@@ -2,13 +2,13 @@ package com.search;
 
 public class SearchWords {
 
-	public String highlight(String highLight, String input, String searchKeyword) {
+	public String highlight(String color, String input, String searchKeyword) {
 		String[] searchKeys = searchKeyword.split(" ");
 		String[] inputArray = input.split(" ");
 
 		for(int i = 0; i < searchKeys.length; i++){
 			String key = searchKeys[i];
-			String newKey = highLight + key + highLight;
+			String newKey = color + key + color;
 			for(int j = 0; j < inputArray.length; j++){
 				if(key.equals(inputArray[j])){
 					inputArray[j] = newKey;
@@ -22,10 +22,10 @@ public class SearchWords {
 		return sb.toString().trim();
 	}
 
-	public String highlight(String searchWithHighLight, String input){
-		String[] searchWithHighString = searchWithHighLight.split(" ");
-		for(int i = 0; i < searchWithHighString.length; i++){
-			String[] searchAndColor = searchWithHighString[i].split(":");
+	public String highlight(String searchKeywordWithColor, String input){
+		String[] searchWithColorArray = searchKeywordWithColor.split(" ");
+		for(int i = 0; i < searchWithColorArray.length; i++){
+			String[] searchAndColor = searchWithColorArray[i].split(":");
 			String search = searchAndColor[0];
 			String color = "["+searchAndColor[1]+"]";
 			input = highlight(color, input, search);
