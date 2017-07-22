@@ -40,6 +40,7 @@ public class SearchWordsTest {
 		SearchWords searchWords = new SearchWords();
 		String newString = searchWords.highlight(searchKeyword, input);
 		System.out.println(newString);
-		Assert.assertTrue(newString.contains("[blue]"));
+		Assert.assertTrue(newString.contains("[blue]is[blue]"));
+		Assert.assertTrue(newString.contains("[red]standard[red]"));
 	}
 }
