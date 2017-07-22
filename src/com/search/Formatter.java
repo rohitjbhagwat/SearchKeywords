@@ -6,6 +6,8 @@ public class Formatter {
 
 	private String capitalize;
 
+	private String fontStyle;
+
 	public String getColor() {
 		return color;
 	}
@@ -29,6 +31,19 @@ public class Formatter {
 			input = input.toLowerCase();
 		}
 		String colorCode = "["+color+"]";
-		return colorCode+input+colorCode;
+		String fontCode = "["+fontStyle+"]";
+		String output = colorCode+input+colorCode;
+		if(fontStyle != null){
+			output = colorCode+fontCode+input+fontCode+colorCode;
+		}
+		return output;
+	}
+
+	public String getFontStyle() {
+		return fontStyle;
+	}
+
+	public void setFontStyle(String fontStyle) {
+		this.fontStyle = fontStyle;
 	}
 }

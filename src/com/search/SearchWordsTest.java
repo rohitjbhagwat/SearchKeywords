@@ -70,9 +70,10 @@ public class SearchWordsTest {
 		Formatter formatter = new Formatter();
 		formatter.setColor("red");
 		formatter.setCapitalize("Capital");
+		formatter.setFontStyle("bold");
 		map.put("is", formatter);
 		String newString = searchWords.highlight();
 		System.out.println(newString);
-		Assert.assertTrue(newString.contains("[red]IS[red]"));
+		Assert.assertTrue(newString.contains("[red][bold]IS[bold][red]"));
 	}
 }
