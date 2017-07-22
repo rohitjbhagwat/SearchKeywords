@@ -29,12 +29,12 @@ public class SearchWords {
 		return sb.toString().trim();
 	}*/
 
-	public String highlight(Map<String, Formatter> keyWordFormatterMap, String input){
-		Iterator<String> it = keyWordFormatterMap.keySet().iterator();
+	public String highlight(String input){
+		Iterator<String> it = keywordFormatterMap.keySet().iterator();
 		String[] inputArray = input.split(" ");
 		while(it.hasNext()){
 			String key = it.next();
-			Formatter formatter = keyWordFormatterMap.get(key);
+			Formatter formatter = keywordFormatterMap.get(key);
 			for(int j = 0; j < inputArray.length; j++){
 				if(key.equals(inputArray[j])){
 					inputArray[j] = formatter.format(key);

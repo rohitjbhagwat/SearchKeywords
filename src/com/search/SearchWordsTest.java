@@ -23,7 +23,7 @@ public class SearchWordsTest {
 		formatter = new Formatter();
 		formatter.setColor("red");
 		map.put("text", formatter);
-		String newString = searchWords.highlight(map, input);
+		String newString = searchWords.highlight(input);
 		Assert.assertTrue(newString.indexOf("[red]") > -1 );
 	}
 
@@ -36,7 +36,7 @@ public class SearchWordsTest {
 		Formatter formatter = new Formatter();
 		formatter.setColor("red");
 		map.put("xyz", formatter);
-		String newString = searchWords.highlight(map, input);
+		String newString = searchWords.highlight(input);
 		Assert.assertTrue(newString.indexOf("[red]") == -1 );
 	}
 
@@ -52,7 +52,7 @@ public class SearchWordsTest {
 		formatter = new Formatter();
 		formatter.setColor("blue");
 		map.put("standard", formatter);
-		String newString = searchWords.highlight(map, input);
+		String newString = searchWords.highlight(input);
 		System.out.println(newString);
 		Assert.assertTrue(newString.contains("[blue]"));
 	}
@@ -68,7 +68,7 @@ public class SearchWordsTest {
 		formatter.setCapitalize("Capital");
 		map.put("is", formatter);
 		searchWords.setKeywordFormatterMap(map);
-		String newString = searchWords.highlight(map, input);
+		String newString = searchWords.highlight(input);
 		System.out.println(newString);
 		Assert.assertTrue(newString.contains("[red]IS[red]"));
 	}
