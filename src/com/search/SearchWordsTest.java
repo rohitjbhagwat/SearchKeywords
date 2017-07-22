@@ -33,4 +33,14 @@ public class SearchWordsTest {
 		System.out.println(newString);
 		Assert.assertTrue(newString.contains("[blue]"));
 	}
+
+	@Test
+	public void shouldHighlightSearchWordWithColor(){
+		String input = "This is a standard text";
+		String searchKeyword = "is:blue standard:red";
+		SearchWords searchWords = new SearchWords();
+		String newString = searchWords.highlight(searchKeyword, input);
+		System.out.println(newString);
+		Assert.assertTrue(newString.contains("[blue]"));
+	}
 }

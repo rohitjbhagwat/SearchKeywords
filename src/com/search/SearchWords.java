@@ -22,4 +22,15 @@ public class SearchWords {
 		return sb.toString().trim();
 	}
 
+	public String highlight(String searchWithHighLight, String input){
+		String[] searchWithHighString = searchWithHighLight.split(" ");
+		for(int i = 0; i < searchWithHighString.length; i++){
+			String[] searchAndColor = searchWithHighString[i].split(":");
+			String search = searchAndColor[0];
+			String color = "["+searchAndColor[1]+"]";
+			input = highlight(color, input, search);
+		}
+		return input;
+	}
+
 }
